@@ -1,3 +1,7 @@
+<a id="future-ideas"></a>
+<a id="learning-value"></a>
+<a id="overview"></a>
+
 # VB.NET Binary Clock — Windows Forms Example
 
 A small Visual Basic Windows Forms application that displays hours, minutes and seconds as colored binary blocks.
@@ -6,15 +10,25 @@ A small Visual Basic Windows Forms application that displays hours, minutes and 
 
 This repository contains one legacy desktop project in `Observer Pattern`. It is useful for studying Windows Forms timer events, binary conversion and mouse interaction. The folder name is historical: the implementation uses form events and a timer, without a separate subject/observer abstraction.
 
+<a id="featured-project-binary-clock-observer-pattern"></a>
+<a id="project-details"></a>
+<a id="visual-behavior"></a>
+<a id="what-it-does"></a>
+
 ## ✨ Features
 
 - Hours use five red blocks; minutes use six yellow blocks; seconds use six green blocks.
 - A text label displays local time alongside the binary representation.
 - Drag the form background with the left mouse button; double-click the background to exit.
 
+<a id="how-to-run-it"></a>
+<a id="visual-studio"></a>
+
 ## 🚀 Quick start
 
 On Windows, open [Observer Pattern.sln](Observer%20Pattern/Observer%20Pattern.sln) in a Visual Studio/MSBuild environment capable of building the legacy .NET Framework 2.0 target. Build the solution, then start it with **F5**. Modern tooling may require a separately reviewed retargeting change; this documentation does not change the target.
+
+<a id="technologies-used"></a>
 
 ## 📦 Prerequisites and installation
 
@@ -25,6 +39,10 @@ The [project file](Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) target
 Each illuminated block represents a power of two. From left to right, the hour row has weights **1, 2, 4, 8, 16**; minute and second rows add **32** at the right. Add the lit weights to read the value. For 45 seconds, the 1, 4, 8 and 32 blocks light up.
 
 The timer is configured for a one-second interval. It uses `Date.Now` on the computer; there is no time-zone configuration or remote time service.
+
+<a id="core-idea"></a>
+<a id="how-the-binary-conversion-works"></a>
+<a id="repository-structure"></a>
 
 ## 🏗️ Architecture
 
@@ -53,6 +71,9 @@ Keep examples reproducible and describe any framework/toolchain change explicitl
 ## 🔒 Security
 
 Avoid putting sensitive information in public reports. Use a private reporting option if available, or contact the maintainer privately for sensitive findings. No dedicated security policy is committed.
+
+<a id="documentation-links"></a>
+<a id="related-projects"></a>
 
 ## 📄 Support and license
 
