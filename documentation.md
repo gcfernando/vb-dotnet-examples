@@ -7,6 +7,23 @@ permalink: /documentation/
 
 Browse the published guides, examples and reference pages for **VB.NET Windows Forms Examples**. Each guide has a readable web page; the Markdown sources remain available on GitHub.
 
+## 🔎 Source reference
+
+The [README](README.md) explains setup, reading the binary clock and known limitations. There is one application, not a library of separate guides.
+
+| Source | What it defines |
+|---|---|
+| [Solution](Observer%20Pattern/Observer%20Pattern.sln) | The Observer UI project and solution configurations |
+| [Project](Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) | .NET Framework 2.0, Windows Forms and output paths |
+| [Form logic](Observer%20Pattern/Observer%20UI/Observer.vb) | Timer, powers-of-two decomposition and mouse events |
+| [Form designer](Observer%20Pattern/Observer%20UI/Observer.Designer.vb) | Label placement, color defaults and one-second timer |
+
+## 🧪 Manual verification reference
+
+Build in a compatible legacy Windows toolchain, then check a nonzero time, second/minute rollover, the midnight hour, dragging and exit. In the current code, cached time fields remain zero, so the repaint conditions skip values equal to zero. This explains the stale-block issue recorded in the README.
+
+No automated tests or successful build result are supplied by this documentation review. The generated page/source navigation below belongs to the documentation site.
+
 ## Read online
 
 <table>

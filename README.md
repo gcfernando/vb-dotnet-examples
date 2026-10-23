@@ -1,132 +1,61 @@
-<div align="center">
-  <h1>VB.NET Windows Forms Examples — Binary Clock in Visual Basic ✨</h1>
-  <p>
-    <strong>Visual Basic learning workspace with small, interactive Windows Forms experiments.</strong>
-  </p>
-</div>
+# VB.NET Binary Clock — Windows Forms Example
 
-<p align="center">
-  <img alt="Language: Visual Basic" src="https://img.shields.io/badge/Language-Visual%20Basic-6f42c1?style=for-the-badge&logo=visual-studio-code" />
-  <img alt="Framework: .NET Framework" src="https://img.shields.io/badge/Framework-.NET%20Framework-512bd4?style=for-the-badge" />
-  <img alt="UI: Windows Forms" src="https://img.shields.io/badge/UI-Windows%20Forms-0088cc?style=for-the-badge" />
-</p>
+A small Visual Basic Windows Forms application that displays hours, minutes and seconds as colored binary blocks.
 
-## Overview
+## 🔎 Overview
 
-This repository is a compact collection of **Visual Basic .NET (VB.NET) Windows Forms** projects focused on UI design, patterns, and experimentation in the classic desktop ecosystem. It currently includes one sample project: a **binary clock** that shows the current hour, minute, and second as coloured binary blocks, updated live by a timer.
+This repository contains one legacy desktop project in `Observer Pattern`. It is useful for studying Windows Forms timer events, binary conversion and mouse interaction. The folder name is historical: the implementation uses form events and a timer, without a separate subject/observer abstraction.
 
-It is useful if you are learning VB.NET and want a small, readable example of timer events, binary number conversion, and mouse-driven form interaction.
+## ✨ Features
 
-## Repository structure
+- Hours use five red blocks; minutes use six yellow blocks; seconds use six green blocks.
+- A text label displays local time alongside the binary representation.
+- Drag the form background with the left mouse button; double-click the background to exit.
 
-```text
-vb_codes/
-├── .gitignore
-├── README.md
-└── Observer Pattern/
-    ├── Observer Pattern.sln
-    └── Observer UI/
-        ├── My Project/
-        ├── Observer UI.vbproj
-        ├── Observer.vb
-        ├── Observer.Designer.vb
-        └── Observer.resx
-```
+## 🚀 Quick start
 
-## Featured project: Binary clock (`Observer Pattern`)
+On Windows, open [Observer Pattern.sln](Observer%20Pattern/Observer%20Pattern.sln) in a Visual Studio/MSBuild environment capable of building the legacy .NET Framework 2.0 target. Build the solution, then start it with **F5**. Modern tooling may require a separately reviewed retargeting change; this documentation does not change the target.
 
-### What it does
+## 📦 Prerequisites and installation
 
-The project in the `Observer Pattern` folder is a Windows Forms application (`FormBinary`) that visualizes the current time using a binary-style layout:
+The [project file](Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) targets `.NET Framework v2.0`, uses the classic Visual Basic MSBuild targets and references Windows Forms. It is not an SDK-style `dotnet run` project. No third-party packages or compiled binaries are committed.
 
-- **Red** blocks represent the hour
-- **Yellow** blocks represent the minute
-- **Green** blocks represent the second
-- The hour uses five blocks (weights 16, 8, 4, 2, 1); the minute and second each use six blocks (32, 16, 8, 4, 2, 1)
-- A label above the blocks also shows the time as text, and the display updates in real time
+## 💡 Usage
 
-### Visual behavior
+Each illuminated block represents a power of two. From left to right, the hour row has weights **1, 2, 4, 8, 16**; minute and second rows add **32** at the right. Add the lit weights to read the value. For 45 seconds, the 1, 4, 8 and 32 blocks light up.
 
-- The form is draggable with the left mouse button
-- Double-clicking the window closes the app
-- The timer refreshes the display every second
-- Binary digits are calculated programmatically by subtracting powers of two (`2 ^ n`)
+The timer is configured for a one-second interval. It uses `Date.Now` on the computer; there is no time-zone configuration or remote time service.
 
-### Core idea
+## 🏗️ Architecture
 
-This project is a simple and intuitive example of using UI components, timer events, and custom colouring logic in VB.NET to build a live, animated interface without complex frameworks.
-
-### How the binary conversion works
-
-On every timer tick, `SetColourIndex` takes the hour, minute, or second and walks the powers of two from `2 ^ 5` (32) down to `2 ^ 0` (1). Whenever the remaining value is at least the current power, that bit is switched on and the power is subtracted. `SetBackColour` then colours the matching blocks. For example, 45 seconds is `32 + 8 + 4 + 1`, so the 32, 8, 4, and 1 blocks turn green.
-
-## Project details
-
-| Item | Value |
+| File | Responsibility |
 |---|---|
-| Language | Visual Basic (.NET Framework) |
-| UI Framework | Windows Forms |
-| Main file | `Observer Pattern/Observer UI/Observer.vb` |
-| Solution file | `Observer Pattern/Observer Pattern.sln` |
-| Build target | .NET Framework 2.0 |
-| Purpose | Timer-driven UI and binary-number demonstration |
+| [Observer.vb](Observer%20Pattern/Observer%20UI/Observer.vb) | Timer updates, binary decomposition, colors, dragging and exit |
+| [Observer.Designer.vb](Observer%20Pattern/Observer%20UI/Observer.Designer.vb) | Generated form layout and timer configuration |
+| [Observer UI.vbproj](Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) | Framework target, references and Debug/Release output paths |
 
-## How to run it
+`SetColourIndex` decomposes each value using powers of two; `SetBackColour` clears and lights the corresponding labels. The solution builds an application named `Observer`.
 
-### Visual Studio
+## 🧪 Development and testing
 
-1. Use Windows and a Visual Studio/MSBuild installation that can build the project's legacy .NET Framework 2.0 target.
-2. Open `Observer Pattern/Observer Pattern.sln` and build the solution. Modern Visual Studio versions may require a separately reviewed retargeting change; this repository still targets .NET Framework 2.0.
-3. Press `F5` to run the app.
+There is no automated test project or CI workflow in this checkout. After building in a compatible environment, manually check time changes, minute/hour rollover, dragging and exit. The documentation review inspected the project, designer and event handlers; it did not launch the application or verify the legacy build toolchain.
 
-The folder name `Observer Pattern` is historical. The implementation uses Windows Forms events and a timer; it does not define a separate subject/observer abstraction.
+## 🛠️ Troubleshooting and limitations
 
-Compiled binaries are not stored in the repository, so build the project to get `Observer.exe` in the `bin` folder.
+- **Build target unavailable:** use tooling and reference assemblies supporting .NET Framework 2.0, or review retargeting as a separate code change.
+- **Stale blocks at zero:** `_thr`, `_tmt` and `_tsc` are initialized to zero and never updated. The timer skips repainting when an hour, minute or second equals zero, so blocks can retain the previous nonzero value. The text label still refreshes. This existing code defect is documented, not fixed here.
+- **Fixed layout:** the form uses a small fixed label layout; display scaling and accessibility have not been tested.
 
-## Technologies used
+## 🤝 Contributing
 
-- Microsoft Visual Studio
-- VB.NET
-- .NET Framework 2.0
-- Windows Forms
-- System.Windows.Forms.Timer
+Keep examples reproducible and describe any framework/toolchain change explicitly. For UI changes, include the Windows version, display scaling and manual checks performed. Preserve generated designer structure.
 
-## Learning value
+## 🔒 Security
 
-This project helps practice:
+Avoid putting sensitive information in public reports. Use a private reporting option if available, or contact the maintainer privately for sensitive findings. No dedicated security policy is committed.
 
-- event-driven programming
-- timer-based UI updates
-- form interaction and drag behavior
-- binary number logic
-- GUI state updates in Visual Basic
+## 📄 Support and license
 
-## Future ideas
+Use [repository issues](https://github.com/gcfernando/vb_codes/issues) for questions and defects. No license file is present in this checkout; confirm permission before reuse or redistribution.
 
-This repository could grow with more Windows Forms experiments such as:
-
-- calculator apps
-- digital clock widgets
-- student management dashboards
-- data-entry forms
-- game UI prototypes
-- pattern-based visual demos
-
-## Related projects
-
-- [C# and .NET code examples](https://github.com/gcfernando/csharp_codes) — includes a high-DPI Windows Forms example in .NET 8
-- [Glass.Message](https://github.com/gcfernando/glass) — a modern `MessageBox` replacement for Windows Forms apps
-- [Spectrum](https://github.com/gcfernando/spectrum-analyzer) — a real-time audio spectrum analyzer built with Windows Forms
-
----
-
-<div align="center">
-  <h3>Built with passion for Visual Basic ✨</h3>
-  <p><em>Small projects, bold ideas, and creative UI experiments.</em></p>
-</div>
-
----
-
-## Documentation links
-
-[Read all VB.NET Windows Forms Examples guides online](https://gcfernando.github.io/vb_codes/documentation/) · [Project overview](https://gcfernando.github.io/vb_codes/) · [All developer projects](https://gcfernando.github.io/gcfernando/projects/)
+[Source reference](documentation.md) · [C# Windows Forms example](https://github.com/gcfernando/csharp_codes/tree/main/FourKWinForm)
