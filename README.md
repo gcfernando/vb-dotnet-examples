@@ -26,7 +26,7 @@ This repository contains one legacy desktop project in `Observer Pattern`. It is
 
 ## 🚀 Quick start
 
-On Windows, open [Observer Pattern.sln](Observer%20Pattern/Observer%20Pattern.sln) in a Visual Studio/MSBuild environment capable of building the legacy .NET Framework 2.0 target. Build the solution, then start it with **F5**. Modern tooling may require a separately reviewed retargeting change; this documentation does not change the target.
+On Windows, open [Observer Pattern.sln](Observer%20Pattern/Observer%20Pattern.sln) in a Visual Studio/MSBuild environment capable of building the legacy .NET Framework 2.0 target. Build the solution, then start it with **F5**. Modern tooling may require a separately reviewed retargeting change; this documentation does not change the target. The committed solution maps both its **Debug** and **Release** configurations to the project's **Release** configuration, so selecting Debug at solution level still selects the Release project build. Review Configuration Manager when stepping through the application.
 
 <a id="technologies-used"></a>
 
@@ -62,11 +62,12 @@ There is no automated test project or CI workflow in this checkout. After buildi
 
 - **Build target unavailable:** use tooling and reference assemblies supporting .NET Framework 2.0, or review retargeting as a separate code change.
 - **Stale blocks at zero:** `_thr`, `_tmt` and `_tsc` are initialized to zero and never updated. The timer skips repainting when an hour, minute or second equals zero, so blocks can retain the previous nonzero value. The text label still refreshes. This existing code defect is documented, not fixed here.
+- **Mixed boundary values:** the text, hour, minute and second values each read `Date.Now` separately. A tick crossing a time boundary can briefly combine values from different instants.
 - **Fixed layout:** the form uses a small fixed label layout; display scaling and accessibility have not been tested.
 
 ## 🤝 Contributing
 
-Keep examples reproducible and describe any framework/toolchain change explicitly. For UI changes, include the Windows version, display scaling and manual checks performed. Preserve generated designer structure.
+Keep examples reproducible and describe any framework/toolchain change explicitly. For UI changes, include the Windows version, display scaling and manual checks performed. Preserve generated designer structure. The existing `.gitignore` ignores the entire `Observer Pattern/Observer UI` directory; already tracked files remain versioned, but new source files there may be hidden from ordinary `git status`. Check ignore rules when adding files and review any rule change separately.
 
 ## 🔒 Security
 

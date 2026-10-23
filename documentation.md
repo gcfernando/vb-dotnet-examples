@@ -13,7 +13,7 @@ The [README](README.md) explains setup, reading the binary clock and known limit
 
 | Source | What it defines |
 |---|---|
-| [Solution](Observer%20Pattern/Observer%20Pattern.sln) | The Observer UI project and solution configurations |
+| [Solution](Observer%20Pattern/Observer%20Pattern.sln) | The Observer UI project; both solution configurations select the project's Release build |
 | [Project](Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) | .NET Framework 2.0, Windows Forms and output paths |
 | [Form logic](Observer%20Pattern/Observer%20UI/Observer.vb) | Timer, powers-of-two decomposition and mouse events |
 | [Form designer](Observer%20Pattern/Observer%20UI/Observer.Designer.vb) | Label placement, color defaults and one-second timer |
