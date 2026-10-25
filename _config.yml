@@ -1,6 +1,6 @@
 # GitHub Pages documentation site; does not configure application deployment.
 url: "https://gcfernando.github.io"
-baseurl: "/vb_codes"
+baseurl: "/vb-dotnet-examples"
 title: "VB.NET Windows Forms Examples"
 description: "Visual Basic Windows Forms learning examples, including a binary clock displaying hours, minutes and seconds."
 lang: "en"
@@ -24,7 +24,7 @@ defaults:
       description: "Visual Basic Windows Forms learning examples, including a binary clock displaying hours, minutes and seconds."
 
 # Public documentation navigation and presentation.
-repository: gcfernando/vb_codes
+repository: gcfernando/vb-dotnet-examples
 theme: jekyll-theme-primer
 projects_hub: https://gcfernando.github.io/gcfernando/projects/
 project_category: "Learn & desktop"

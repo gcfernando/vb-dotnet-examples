@@ -13,10 +13,10 @@ The [README](README.md) explains setup, reading the binary clock and known limit
 
 | Source | What it defines |
 |---|---|
-| [Solution](Observer%20Pattern/Observer%20Pattern.sln) | The Observer UI project; both solution configurations select the project's Release build |
-| [Project](Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) | .NET Framework 2.0, Windows Forms and output paths |
-| [Form logic](Observer%20Pattern/Observer%20UI/Observer.vb) | Timer, powers-of-two decomposition and mouse events |
-| [Form designer](Observer%20Pattern/Observer%20UI/Observer.Designer.vb) | Label placement, color defaults and one-second timer |
+| [Solution](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20Pattern.sln) | The Observer UI project; both solution configurations select the project's Release build |
+| [Project](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) | .NET Framework 2.0, Windows Forms and output paths |
+| [Form logic](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20UI/Observer.vb) | Timer, powers-of-two decomposition and mouse events |
+| [Form designer](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20UI/Observer.Designer.vb) | Label placement, color defaults and one-second timer |
 
 ## 🧪 Manual verification reference
 
@@ -50,4 +50,4 @@ No automated tests or successful build result are supplied by this documentation
 
 ## Explore more
 
-[All developer projects](https://gcfernando.github.io/gcfernando/projects/) · [Repository on GitHub](https://github.com/gcfernando/vb_codes) · [XML sitemap](https://gcfernando.github.io/vb_codes/sitemap.xml)
+[All developer projects](https://gcfernando.github.io/gcfernando/projects/) · [Repository on GitHub](https://github.com/gcfernando/vb-dotnet-examples) · [XML sitemap](https://gcfernando.github.io/vb-dotnet-examples/sitemap.xml)

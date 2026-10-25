@@ -4,6 +4,8 @@
 
 # VB.NET Binary Clock — Windows Forms Example
 
+**Read online:** [Documentation website](https://gcfernando.github.io/vb-dotnet-examples/) · [All guides](documentation.md)
+
 A small Visual Basic Windows Forms application that displays hours, minutes and seconds as colored binary blocks.
 
 ## 🔎 Overview
@@ -26,13 +28,13 @@ This repository contains one legacy desktop project in `Observer Pattern`. It is
 
 ## 🚀 Quick start
 
-On Windows, open [Observer Pattern.sln](Observer%20Pattern/Observer%20Pattern.sln) in a Visual Studio/MSBuild environment capable of building the legacy .NET Framework 2.0 target. Build the solution, then start it with **F5**. Modern tooling may require a separately reviewed retargeting change; this documentation does not change the target. The committed solution maps both its **Debug** and **Release** configurations to the project's **Release** configuration, so selecting Debug at solution level still selects the Release project build. Review Configuration Manager when stepping through the application.
+On Windows, open [Observer Pattern.sln](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20Pattern.sln) in a Visual Studio/MSBuild environment capable of building the legacy .NET Framework 2.0 target. Build the solution, then start it with **F5**. Modern tooling may require a separately reviewed retargeting change; this documentation does not change the target. The committed solution maps both its **Debug** and **Release** configurations to the project's **Release** configuration, so selecting Debug at solution level still selects the Release project build. Review Configuration Manager when stepping through the application.
 
 <a id="technologies-used"></a>
 
 ## 📦 Prerequisites and installation
 
-The [project file](Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) targets `.NET Framework v2.0`, uses the classic Visual Basic MSBuild targets and references Windows Forms. It is not an SDK-style `dotnet run` project. No third-party packages or compiled binaries are committed.
+The [project file](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) targets `.NET Framework v2.0`, uses the classic Visual Basic MSBuild targets and references Windows Forms. It is not an SDK-style `dotnet run` project. No third-party packages or compiled binaries are committed.
 
 ## 💡 Usage
 
@@ -48,9 +50,9 @@ The timer is configured for a one-second interval. It uses `Date.Now` on the com
 
 | File | Responsibility |
 |---|---|
-| [Observer.vb](Observer%20Pattern/Observer%20UI/Observer.vb) | Timer updates, binary decomposition, colors, dragging and exit |
-| [Observer.Designer.vb](Observer%20Pattern/Observer%20UI/Observer.Designer.vb) | Generated form layout and timer configuration |
-| [Observer UI.vbproj](Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) | Framework target, references and Debug/Release output paths |
+| [Observer.vb](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20UI/Observer.vb) | Timer updates, binary decomposition, colors, dragging and exit |
+| [Observer.Designer.vb](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20UI/Observer.Designer.vb) | Generated form layout and timer configuration |
+| [Observer UI.vbproj](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) | Framework target, references and Debug/Release output paths |
 
 `SetColourIndex` decomposes each value using powers of two; `SetBackColour` clears and lights the corresponding labels. The solution builds an application named `Observer`.
 
@@ -78,6 +80,6 @@ Avoid putting sensitive information in public reports. Use a private reporting o
 
 ## 📄 Support and license
 
-Use [repository issues](https://github.com/gcfernando/vb_codes/issues) for questions and defects. No license file is present in this checkout; confirm permission before reuse or redistribution.
+Use [repository issues](https://github.com/gcfernando/vb-dotnet-examples/issues) for questions and defects. No license file is present in this checkout; confirm permission before reuse or redistribution.
 
-[Source reference](documentation.md) · [C# Windows Forms example](https://github.com/gcfernando/csharp_codes/tree/main/FourKWinForm)
+[Source reference](documentation.md) · [C# Windows Forms example](https://github.com/gcfernando/csharp-dotnet-examples/tree/main/FourKWinForm)
