@@ -2,7 +2,17 @@
 <a id="learning-value"></a>
 <a id="overview"></a>
 
+<div align="center" markdown="1">
+
 # VB.NET Binary Clock — Windows Forms Example
+
+<p align="center"><strong>Read time in binary. Explore a small Windows Forms application.</strong></p>
+
+[![Repository standards](https://github.com/gcfernando/vb-dotnet-examples/actions/workflows/repository-standards.yml/badge.svg)](https://github.com/gcfernando/vb-dotnet-examples/actions/workflows/repository-standards.yml) [![Read the documentation](https://img.shields.io/badge/Read-the_documentation-2563eb?style=flat-square)](https://gcfernando.github.io/vb-dotnet-examples/)
+
+</div>
+
+> **Start here:** [Build the clock](#guide-quick-start) · [Read binary time](#guide-usage) · [Explore the form](#guide-architecture) · [Review known issues](#guide-troubleshooting-and-limitations)
 
 **Read online:** [Documentation website](https://gcfernando.github.io/vb-dotnet-examples/) · [All guides](documentation.md)
 
@@ -26,6 +36,8 @@ This repository contains one legacy desktop project in `Observer Pattern`. It is
 <a id="how-to-run-it"></a>
 <a id="visual-studio"></a>
 
+<a id="guide-quick-start"></a>
+
 ## 🚀 Quick start
 
 On Windows, open [Observer Pattern.sln](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20Pattern.sln) in a Visual Studio/MSBuild environment capable of building the legacy .NET Framework 2.0 target. Build the solution, then start it with **F5**. Modern tooling may require a separately reviewed retargeting change; this documentation does not change the target. The committed solution maps both its **Debug** and **Release** configurations to the project's **Release** configuration, so selecting Debug at solution level still selects the Release project build. Review Configuration Manager when stepping through the application.
@@ -36,6 +48,8 @@ On Windows, open [Observer Pattern.sln](https://github.com/gcfernando/vb-dotnet-
 
 The [project file](https://github.com/gcfernando/vb-dotnet-examples/blob/main/Observer%20Pattern/Observer%20UI/Observer%20UI.vbproj) targets `.NET Framework v2.0`, uses the classic Visual Basic MSBuild targets and references Windows Forms. It is not an SDK-style `dotnet run` project. No third-party packages or compiled binaries are committed.
 
+<a id="guide-usage"></a>
+
 ## 💡 Usage
 
 Each illuminated block represents a power of two. From left to right, the hour row has weights **1, 2, 4, 8, 16**; minute and second rows add **32** at the right. Add the lit weights to read the value. For 45 seconds, the 1, 4, 8 and 32 blocks light up.
@@ -45,6 +59,8 @@ The timer is configured for a one-second interval. It uses `Date.Now` on the com
 <a id="core-idea"></a>
 <a id="how-the-binary-conversion-works"></a>
 <a id="repository-structure"></a>
+
+<a id="guide-architecture"></a>
 
 ## 🏗️ Architecture
 
@@ -59,6 +75,8 @@ The timer is configured for a one-second interval. It uses `Date.Now` on the com
 ## 🧪 Development and testing
 
 There is no application test project or application CI build in this checkout; the Repository standards workflow checks metadata only. After building in a compatible environment, manually check time changes, minute/hour rollover, dragging and exit. The documentation review inspected the project, designer and event handlers; it did not launch the application or verify the legacy build toolchain.
+
+<a id="guide-troubleshooting-and-limitations"></a>
 
 ## 🛠️ Troubleshooting and limitations
 
