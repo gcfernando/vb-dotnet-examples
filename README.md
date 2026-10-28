@@ -58,7 +58,7 @@ The timer is configured for a one-second interval. It uses `Date.Now` on the com
 
 ## 🧪 Development and testing
 
-There is no automated test project or CI workflow in this checkout. After building in a compatible environment, manually check time changes, minute/hour rollover, dragging and exit. The documentation review inspected the project, designer and event handlers; it did not launch the application or verify the legacy build toolchain.
+There is no application test project or application CI build in this checkout; the Repository standards workflow checks metadata only. After building in a compatible environment, manually check time changes, minute/hour rollover, dragging and exit. The documentation review inspected the project, designer and event handlers; it did not launch the application or verify the legacy build toolchain.
 
 ## 🛠️ Troubleshooting and limitations
 
@@ -69,11 +69,11 @@ There is no automated test project or CI workflow in this checkout. After buildi
 
 ## 🤝 Contributing
 
-Keep examples reproducible and describe any framework/toolchain change explicitly. For UI changes, include the Windows version, display scaling and manual checks performed. Preserve generated designer structure. The existing `.gitignore` ignores the entire `Observer Pattern/Observer UI` directory; already tracked files remain versioned, but new source files there may be hidden from ordinary `git status`. Check ignore rules when adding files and review any rule change separately.
+Keep examples reproducible and describe any framework/toolchain change explicitly. For UI changes, include the Windows version, display scaling and manual checks performed. Preserve generated designer structure. The `.gitignore` excludes build and IDE output while keeping source files visible to Git.
 
 ## 🔒 Security
 
-Avoid putting sensitive information in public reports. Use a private reporting option if available, or contact the maintainer privately for sensitive findings. No dedicated security policy is committed.
+Avoid putting sensitive information in public reports. Use a private reporting option if available, or contact the maintainer privately for sensitive findings. See the [security policy](SECURITY.md) for private reporting.
 
 <a id="documentation-links"></a>
 <a id="related-projects"></a>
@@ -83,3 +83,7 @@ Avoid putting sensitive information in public reports. Use a private reporting o
 Use [repository issues](https://github.com/gcfernando/vb-dotnet-examples/issues) for questions and defects. No license file is present in this checkout; confirm permission before reuse or redistribution.
 
 [Source reference](documentation.md) · [C# Windows Forms example](https://github.com/gcfernando/csharp-dotnet-examples/tree/main/FourKWinForm)
+
+## Repository maintenance
+
+[Contributing](https://github.com/gcfernando/vb-dotnet-examples/blob/main/CONTRIBUTING.md) · [Security policy](https://github.com/gcfernando/vb-dotnet-examples/blob/main/SECURITY.md) · [Repository standards](https://github.com/gcfernando/vb-dotnet-examples/blob/main/REPOSITORY_STANDARDS.md)

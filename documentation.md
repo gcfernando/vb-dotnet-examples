@@ -5,6 +5,8 @@ description: "Visual Basic desktop examples, including a binary clock built with
 permalink: /documentation/
 ---
 
+# Documentation
+
 Browse the published guides, examples and reference pages for **VB.NET Windows Forms Examples**. Each guide has a readable web page; the Markdown sources remain available on GitHub.
 
 ## 🔎 Source reference

@@ -1,6 +1,22 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+# .NET build and IDE output (at any project depth)
+bin/
+obj/
+.vs/
+TestResults/
+*.user
+*.suo
 
-/Observer Pattern/.vs/Observer Pattern
-/Observer Pattern/Observer UI
+# Shared local files and documentation build caches
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.env
+.env.*
+!.env.example
+!.env.sample
+_site/
+.jekyll-cache/
+.sass-cache/
+.bundle/
